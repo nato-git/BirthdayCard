@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,314 +12,995 @@
         android:layout_height="100dp"
         android:text="1月"
         android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/month"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/month"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/month">
+
+        <!-- 一行目 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <!--一行目-->
-            <Button
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 1日 -->
+            <FrameLayout
+                android:id="@+id/containerDay1"
                 android:layout_width="0dp"
-                android:id="@+id/day1"
-                android:text="1"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay1Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 2日 -->
+            <FrameLayout
+                android:id="@+id/containerDay2"
                 android:layout_width="0dp"
-                android:id="@+id/day2"
-                android:text="2"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="2"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay2Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 3日 -->
+            <FrameLayout
+                android:id="@+id/containerDay3"
                 android:layout_width="0dp"
-                android:id="@+id/day3"
-                android:text="3"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="3"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay3Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 4日 -->
+            <FrameLayout
+                android:id="@+id/containerDay4"
                 android:layout_width="0dp"
-                android:id="@+id/day4"
-                android:text="4"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="4"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay4Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 5日 -->
+            <FrameLayout
+                android:id="@+id/containerDay5"
                 android:layout_width="0dp"
-                android:id="@+id/day5"
-                android:text="5"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="5"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay5Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 6日 -->
+            <FrameLayout
+                android:id="@+id/containerDay6"
                 android:layout_width="0dp"
-                android:id="@+id/day6"
-                android:text="6"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="6"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay6Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 7日 -->
+            <FrameLayout
+                android:id="@+id/containerDay7"
                 android:layout_width="0dp"
-                android:id="@+id/day7"
-                android:text="7"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="7"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay7Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
         </LinearLayout>
-        <!--二行目-->
+
+        <!-- 二行目 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <Button
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 8日 -->
+            <FrameLayout
+                android:id="@+id/containerDay8"
                 android:layout_width="0dp"
-                android:id="@+id/day8"
-                android:text="8"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="8"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay8Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 9日 -->
+            <FrameLayout
+                android:id="@+id/containerDay9"
                 android:layout_width="0dp"
-                android:id="@+id/day9"
-                android:text="9"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="9"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay9Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 10日 -->
+            <FrameLayout
+                android:id="@+id/containerDay10"
                 android:layout_width="0dp"
-                android:id="@+id/day10"
-                android:text="10"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="10"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay10Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 11日 -->
+            <FrameLayout
+                android:id="@+id/containerDay11"
                 android:layout_width="0dp"
-                android:id="@+id/day11"
-                android:text="11"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="11"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay11Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 12日 -->
+            <FrameLayout
+                android:id="@+id/containerDay12"
                 android:layout_width="0dp"
-                android:id="@+id/day12"
-                android:text="12"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="12"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay12Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 13日 -->
+            <FrameLayout
+                android:id="@+id/containerDay13"
                 android:layout_width="0dp"
-                android:id="@+id/day13"
-                android:text="13"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="13"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay13Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 14日 -->
+            <FrameLayout
+                android:id="@+id/containerDay14"
                 android:layout_width="0dp"
-                android:id="@+id/day14"
-                android:text="14"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="14"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay14Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
         </LinearLayout>
-        <!--三行目-->
+
+        <!-- 三行目 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <Button
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 15日 -->
+            <FrameLayout
+                android:id="@+id/containerDay15"
                 android:layout_width="0dp"
-                android:id="@+id/day15"
-                android:text="15"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="15"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay15Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 16日 -->
+            <FrameLayout
+                android:id="@+id/containerDay16"
                 android:layout_width="0dp"
-                android:id="@+id/day16"
-                android:text="16"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="16"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay16Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 17日 -->
+            <FrameLayout
+                android:id="@+id/containerDay17"
                 android:layout_width="0dp"
-                android:id="@+id/day17"
-                android:text="17"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="17"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay17Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 18日 -->
+            <FrameLayout
+                android:id="@+id/containerDay18"
                 android:layout_width="0dp"
-                android:id="@+id/day18"
-                android:text="18"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="18"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay18Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 19日 -->
+            <FrameLayout
+                android:id="@+id/containerDay19"
                 android:layout_width="0dp"
-                android:id="@+id/day19"
-                android:text="19"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="19"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay19Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 20日 -->
+            <FrameLayout
+                android:id="@+id/containerDay20"
                 android:layout_width="0dp"
-                android:id="@+id/day20"
-                android:text="20"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="20"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay20Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 21日 -->
+            <FrameLayout
+                android:id="@+id/containerDay21"
                 android:layout_width="0dp"
-                android:id="@+id/day21"
-                android:text="21"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="21"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay21Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
         </LinearLayout>
-        <!--四行目-->
+
+        <!-- 四行目 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <Button
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 22日 -->
+            <FrameLayout
+                android:id="@+id/containerDay22"
                 android:layout_width="0dp"
-                android:id="@+id/day22"
-                android:text="22"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="22"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay22Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 23日 -->
+            <FrameLayout
+                android:id="@+id/containerDay23"
                 android:layout_width="0dp"
-                android:id="@+id/day23"
-                android:text="23"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day23"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="23"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay23Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 24日 -->
+            <FrameLayout
+                android:id="@+id/containerDay24"
                 android:layout_width="0dp"
-                android:id="@+id/day24"
-                android:text="24"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day24"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="24"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay24Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 25日 -->
+            <FrameLayout
+                android:id="@+id/containerDay25"
                 android:layout_width="0dp"
-                android:id="@+id/day25"
-                android:text="25"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day25"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="25"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay25Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 26日 -->
+            <FrameLayout
+                android:id="@+id/containerDay26"
                 android:layout_width="0dp"
-                android:id="@+id/day26"
-                android:text="26"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day26"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="26"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay26Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 27日 -->
+            <FrameLayout
+                android:id="@+id/containerDay27"
                 android:layout_width="0dp"
-                android:id="@+id/day27"
-                android:text="27"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day27"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="27"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay27Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 28日 -->
+            <FrameLayout
+                android:id="@+id/containerDay28"
                 android:layout_width="0dp"
-                android:id="@+id/day28"
-                android:text="28"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day28"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="28"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay28Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
         </LinearLayout>
-        <!--三行目-->
+
+        <!-- 五行目 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <Button
-                android:layout_weight="1"
-                android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- 29日 -->
+            <FrameLayout
+                android:id="@+id/containerDay29"
                 android:layout_width="0dp"
-                android:id="@+id/day29"
-                android:text="29"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day29"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="29"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay29Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 30日 -->
+            <FrameLayout
+                android:id="@+id/containerDay30"
                 android:layout_width="0dp"
-                android:id="@+id/day30"
-                android:text="30"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="30"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay30Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- 31日 -->
+            <FrameLayout
+                android:id="@+id/containerDay31"
                 android:layout_width="0dp"
-                android:id="@+id/day31"
-                android:text="31"
-                android:gravity="top|start"
-                android:textSize="20sp"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/day31"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:padding="5dp"
+                    android:text="31"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textDay31Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:elevation="10dp"
+                    android:textColor="#FF0000"
+                    android:textSize="8sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:id="@+id/edit">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:id="@+id/monthday"
+            android:text="1月1日"></TextView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/black"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"></View>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_margin="15dp"></TextView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:hint="名前を記入"
+            android:id="@+id/new_name"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:hint="タグを記入"
+            android:id="@+id/new_tag"></EditText>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="追加する"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            android:id="@+id/add_button"></Button>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

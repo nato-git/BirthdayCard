@@ -1,62 +1,159 @@
 package com.example.birthdaycard
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
 import kotlinx.serialization.json.Json
 import java.io.File
 import java.util.Calendar
+import kotlinx.serialization.encodeToString
 
 class MainActivity : ComponentActivity() {
+    var nowMonth: Int = 1
+    var startX: Float = 0f
+    val dayButtons: MutableList<Button> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val calendar = Calendar.getInstance()
-        var nowMonth = calendar.get(Calendar.MONTH) + 1
-
+        nowMonth = calendar.get(Calendar.MONTH) + 1
         val monthButton = findViewById<Button>(R.id.month)
         monthButton.text = "${nowMonth}月"
+        val editWindow = findViewById<LinearLayout>(R.id.edit)
+        val windowMonth = findViewById<TextView>(R.id.monthday)
+        val windowName = findViewById<TextView>(R.id.name)
+        val windowNewName = findViewById<EditText>(R.id.new_name)
+        val windowNewTag = findViewById<EditText>(R.id.new_tag)
+        val windowButton = findViewById<Button>(R.id.add_button)
 
+        for(i in 1..31){
+            val resId = resources.getIdentifier("day$i", "id", packageName)
+            dayButtons.add(findViewById<Button>(resId))
+        }
+        daySetting(nowMonth)
         val jsonFile = File(filesDir, "birthday.json")
+        var birthdayData: List<Birthday> = emptyList()
         if (jsonFile.exists()) {
             try {
-                val birthdayData = Json.decodeFromString<birthday>(jsonFile.readText())
-
+                birthdayData = Json.decodeFromString<List<Birthday>>(jsonFile.readText())
+                var names = ""
+                for(birthday in birthdayData){
+                    if(nowMonth == birthday.month){
+                        val birthdayButton = dayButtons[birthday.day-1]
+                        names += "${birthday.name} - ${birthday.tag}\n"
+                        birthdayButton.text = names
+                    }
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
-
-        var totalMove: Float = 0f
-        Modifier.pointerInput(Unit){
-            detectHorizontalDragGestures(
-                onDragEnd = {
-                    if (totalMove > 50f){
-                        nowMonth += 1
-                        if (nowMonth > 12){
-                            nowMonth = 1
-                        }
-                        monthButton.text = "${nowMonth}月"
+        for(i in 1..31){
+            dayButtons[i-1].setOnClickListener {
+                editWindow.isVisible = true
+                windowMonth.text = "${nowMonth}月${i}日"
+                var windowNames = ""
+                for(birthday in birthdayData){
+                    if(nowMonth == birthday.month && i == birthday.day){
+                        windowNames += "${birthday.name} - ${birthday.tag}\n"
                     }
-                    else if (totalMove < -50f){
-                        nowMonth -= 1
-                        if (nowMonth < 0){
-                            nowMonth = 12
-                        }
-                        monthButton.text = "${nowMonth}月"
-                    }
-                    totalMove = 0f
-                },
-                onHorizontalDrag = { change, dragAmount ->
-                    change.consume()
-                    totalMove += dragAmount
                 }
-            )
+                windowName.text = windowNames
+            }
         }
 
+        windowButton.setOnClickListener {
+            val newName = windowNewName.text.toString()
+            val newTag = windowNewTag.text.toString()
+            val dayNumber = windowMonth.text.indexOf("月")
+            var day = windowMonth.text.substring(dayNumber+1)
+            day = day.replace("日", "")
+            val newBirthday = Birthday(newName, nowMonth, day.toInt(), newTag)
+            birthdayData += newBirthday
+            val newJson = Json.encodeToString(birthdayData)
+            jsonFile.writeText(newJson)
+            editWindow.isVisible = false
+            val birthdayButton = dayButtons[day.toInt()-1]
+            birthdayButton.text = "${windowName.text}\n${newName} - ${newTag}"
+        }
 
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        when(ev?.action){
+            MotionEvent.ACTION_DOWN -> {
+                startX = ev.x
+            }
+            MotionEvent.ACTION_UP -> {
+                val diffX = ev.x - startX
+                if(diffX > 50f){
+                    nowMonth--
+                    if(nowMonth < 1){nowMonth = 12}
+                    val monthButton = findViewById<Button>(R.id.month)
+                    monthButton.text = "${nowMonth}月"
+                    daySetting(nowMonth)
+                    birthdaySetting()
+                }
+                else if(diffX < -50f){
+                    nowMonth++
+                    if(nowMonth > 12){nowMonth = 1}
+                    val monthButton = findViewById<Button>(R.id.month)
+                    monthButton.text = "${nowMonth}月"
+                    daySetting(nowMonth)
+                    birthdaySetting()
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
+    fun birthdaySetting(){
+        val jsonFile = File(filesDir, "birthday.json")
+        var birthdayData: List<Birthday> = emptyList()
+        if (jsonFile.exists()) {
+            try {
+                birthdayData = Json.decodeFromString<List<Birthday>>(jsonFile.readText())
+                var names = ""
+                for(birthday in birthdayData){
+                    if(nowMonth == birthday.month){
+                        val birthdayButton = dayButtons[birthday.day-1]
+                        names += "${birthday.name} - ${birthday.tag}\n"
+                        birthdayButton.text = names
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    fun daySetting(month: Int){
+        for (i in 29..31){
+            if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+                dayButtons[i-1].isVisible = true
+            }
+            else if(month == 4 || month == 6 || month == 9 || month == 11){
+                if(i == 31) {
+                    dayButtons[i-1].isVisible = false
+                }
+                else {
+                    dayButtons[i-1].isVisible = true
+                }
+            }
+            else if(month == 2){
+                dayButtons[i-1].isVisible = false
+            }
+        }
     }
 }

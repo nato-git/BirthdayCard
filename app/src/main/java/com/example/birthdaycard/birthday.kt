@@ -2,8 +2,9 @@ package com.example.birthdaycard
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class birthday(
+data class Birthday(
     val name: String,
     val month: Int,
-    val day: Int
+    val day: Int,
+    val tag: String
 )
