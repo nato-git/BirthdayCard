@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
     var nowMonth: Int = 1
     var startX: Float = 0f
     val dayButtons: MutableList<Button> = arrayListOf()
+    val dayInfo: MutableList<TextView> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity() {
         val calendar = Calendar.getInstance()
         nowMonth = calendar.get(Calendar.MONTH) + 1
         val monthButton = findViewById<Button>(R.id.month)
+        val calender = findViewById<LinearLayout>(R.id.calender)
         monthButton.text = "${nowMonth}月"
         val editWindow = findViewById<LinearLayout>(R.id.edit)
         val windowMonth = findViewById<TextView>(R.id.monthday)
@@ -36,10 +38,13 @@ class MainActivity : ComponentActivity() {
         val windowNewName = findViewById<EditText>(R.id.new_name)
         val windowNewTag = findViewById<EditText>(R.id.new_tag)
         val windowButton = findViewById<Button>(R.id.add_button)
+        editWindow.isVisible = false
 
         for(i in 1..31){
             val resId = resources.getIdentifier("day$i", "id", packageName)
             dayButtons.add(findViewById<Button>(resId))
+            val infoId = resources.getIdentifier("textDay${i}Info", "id", packageName)
+            dayInfo.add(findViewById<TextView>(infoId))
         }
         daySetting(nowMonth)
         val jsonFile = File(filesDir, "birthday.json")
@@ -50,9 +55,9 @@ class MainActivity : ComponentActivity() {
                 var names = ""
                 for(birthday in birthdayData){
                     if(nowMonth == birthday.month){
-                        val birthdayButton = dayButtons[birthday.day-1]
+                        val birthdayButtonName = dayInfo[birthday.day-1]
                         names += "${birthday.name} - ${birthday.tag}\n"
-                        birthdayButton.text = names
+                        birthdayButtonName.text = names
                     }
                 }
             } catch (e: Exception) {
@@ -62,6 +67,7 @@ class MainActivity : ComponentActivity() {
         for(i in 1..31){
             dayButtons[i-1].setOnClickListener {
                 editWindow.isVisible = true
+                calender.isVisible = false
                 windowMonth.text = "${nowMonth}月${i}日"
                 var windowNames = ""
                 for(birthday in birthdayData){
@@ -84,8 +90,9 @@ class MainActivity : ComponentActivity() {
             val newJson = Json.encodeToString(birthdayData)
             jsonFile.writeText(newJson)
             editWindow.isVisible = false
-            val birthdayButton = dayButtons[day.toInt()-1]
-            birthdayButton.text = "${windowName.text}\n${newName} - ${newTag}"
+            calender.isVisible = true
+            val birthdayButtonName = dayInfo[day.toInt()-1]
+            birthdayButtonName.text = "${windowName.text}\n${newName} - ${newTag}"
         }
 
     }
@@ -127,9 +134,9 @@ class MainActivity : ComponentActivity() {
                 var names = ""
                 for(birthday in birthdayData){
                     if(nowMonth == birthday.month){
-                        val birthdayButton = dayButtons[birthday.day-1]
+                        val birthdayButtonName = dayInfo[birthday.day-1]
                         names += "${birthday.name} - ${birthday.tag}\n"
-                        birthdayButton.text = names
+                        birthdayButtonName.text = names
                     }
                 }
             } catch (e: Exception) {
@@ -139,6 +146,9 @@ class MainActivity : ComponentActivity() {
     }
 
     fun daySetting(month: Int){
+        for(i in 1..31){
+            dayButtons[i-1].text = "${i}"
+        }
         for (i in 29..31){
             if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
                 dayButtons[i-1].isVisible = true
