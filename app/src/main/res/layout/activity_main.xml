@@ -52,12 +52,12 @@
                     android:id="@+id/textDay1Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 2日 -->
@@ -80,13 +80,12 @@
                     android:id="@+id/textDay2Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:text="hello"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 3日 -->
@@ -109,12 +108,12 @@
                     android:id="@+id/textDay3Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 4日 -->
@@ -137,12 +136,12 @@
                     android:id="@+id/textDay4Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 5日 -->
@@ -165,12 +164,12 @@
                     android:id="@+id/textDay5Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 6日 -->
@@ -193,12 +192,12 @@
                     android:id="@+id/textDay6Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 7日 -->
@@ -221,12 +220,12 @@
                     android:id="@+id/textDay7Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -257,12 +256,12 @@
                     android:id="@+id/textDay8Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 9日 -->
@@ -285,12 +284,12 @@
                     android:id="@+id/textDay9Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 10日 -->
@@ -313,12 +312,12 @@
                     android:id="@+id/textDay10Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 11日 -->
@@ -341,12 +340,12 @@
                     android:id="@+id/textDay11Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 12日 -->
@@ -369,12 +368,12 @@
                     android:id="@+id/textDay12Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 13日 -->
@@ -397,12 +396,12 @@
                     android:id="@+id/textDay13Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 14日 -->
@@ -425,12 +424,12 @@
                     android:id="@+id/textDay14Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -461,12 +460,12 @@
                     android:id="@+id/textDay15Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 16日 -->
@@ -489,12 +488,12 @@
                     android:id="@+id/textDay16Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 17日 -->
@@ -517,12 +516,12 @@
                     android:id="@+id/textDay17Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 18日 -->
@@ -545,12 +544,12 @@
                     android:id="@+id/textDay18Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 19日 -->
@@ -573,12 +572,12 @@
                     android:id="@+id/textDay19Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 20日 -->
@@ -601,12 +600,12 @@
                     android:id="@+id/textDay20Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 21日 -->
@@ -629,12 +628,12 @@
                     android:id="@+id/textDay21Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -665,12 +664,12 @@
                     android:id="@+id/textDay22Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp" />
             </FrameLayout>
 
             <!-- 23日 -->
@@ -693,12 +692,12 @@
                     android:id="@+id/textDay23Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 24日 -->
@@ -721,12 +720,12 @@
                     android:id="@+id/textDay24Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 25日 -->
@@ -749,12 +748,12 @@
                     android:id="@+id/textDay25Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 26日 -->
@@ -777,12 +776,12 @@
                     android:id="@+id/textDay26Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 27日 -->
@@ -805,12 +804,12 @@
                     android:id="@+id/textDay27Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 28日 -->
@@ -833,12 +832,12 @@
                     android:id="@+id/textDay28Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -869,12 +868,12 @@
                     android:id="@+id/textDay29Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 30日 -->
@@ -897,12 +896,12 @@
                     android:id="@+id/textDay30Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 31日 -->
@@ -925,12 +924,12 @@
                     android:id="@+id/textDay31Info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="5dp"
                     android:elevation="10dp"
                     android:textColor="#FF0000"
-                    android:textSize="8sp"
-                    android:visibility="gone" />
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <Space
@@ -972,30 +971,39 @@
             android:textSize="35sp"
             android:textColor="@color/black"
             android:id="@+id/monthday"
-            android:text="1月1日"></TextView>
+            android:text="1月1日"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/black"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"></View>
+            android:layout_marginLeft="15dp"/>
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="380dp"
-            android:layout_margin="15dp"></TextView>
+            android:layout_height="300dp"
+            android:layout_margin="15dp"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:hint="名前を記入"
-            android:id="@+id/new_name"></EditText>
+            android:id="@+id/new_name"
+            android:inputType="text"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="15dp"
             android:hint="タグを記入"
-            android:id="@+id/new_tag"></EditText>
+            android:id="@+id/new_tag"
+            android:inputType="text"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:text="入力した名前の人だけ削除"
+            android:textSize="20sp"
+            android:id="@+id/delete_button"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -1003,6 +1011,6 @@
             android:text="追加する"
             android:textSize="20sp"
             android:layout_margin="15dp"
-            android:id="@+id/add_button"></Button>
+            android:id="@+id/add_button"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import kotlinx.serialization.json.Json
@@ -38,6 +35,7 @@ class MainActivity : ComponentActivity() {
         val windowNewName = findViewById<EditText>(R.id.new_name)
         val windowNewTag = findViewById<EditText>(R.id.new_tag)
         val windowButton = findViewById<Button>(R.id.add_button)
+        val windowDeleteButton = findViewById<Button>(R.id.delete_button)
         editWindow.isVisible = false
 
         for(i in 1..31){
@@ -53,8 +51,13 @@ class MainActivity : ComponentActivity() {
             try {
                 birthdayData = Json.decodeFromString<List<Birthday>>(jsonFile.readText())
                 var names = ""
+                var day = 0
                 for(birthday in birthdayData){
                     if(nowMonth == birthday.month){
+                        if(day != birthday.day){
+                            names = ""
+                            day = birthday.day
+                        }
                         val birthdayButtonName = dayInfo[birthday.day-1]
                         names += "${birthday.name} - ${birthday.tag}\n"
                         birthdayButtonName.text = names
@@ -70,6 +73,8 @@ class MainActivity : ComponentActivity() {
                 calender.isVisible = false
                 windowMonth.text = "${nowMonth}月${i}日"
                 var windowNames = ""
+                windowNewName.setText("")
+                windowNewTag.setText("")
                 for(birthday in birthdayData){
                     if(nowMonth == birthday.month && i == birthday.day){
                         windowNames += "${birthday.name} - ${birthday.tag}\n"
@@ -82,17 +87,38 @@ class MainActivity : ComponentActivity() {
         windowButton.setOnClickListener {
             val newName = windowNewName.text.toString()
             val newTag = windowNewTag.text.toString()
-            val dayNumber = windowMonth.text.indexOf("月")
-            var day = windowMonth.text.substring(dayNumber+1)
-            day = day.replace("日", "")
-            val newBirthday = Birthday(newName, nowMonth, day.toInt(), newTag)
-            birthdayData += newBirthday
-            val newJson = Json.encodeToString(birthdayData)
-            jsonFile.writeText(newJson)
-            editWindow.isVisible = false
-            calender.isVisible = true
-            val birthdayButtonName = dayInfo[day.toInt()-1]
-            birthdayButtonName.text = "${windowName.text}\n${newName} - ${newTag}"
+            if (newName != "" && newTag != "")
+            {
+                val dayNumber = windowMonth.text.indexOf("月")
+                var day = windowMonth.text.substring(dayNumber + 1)
+                day = day.replace("日", "")
+                val newBirthday = Birthday(newName, nowMonth, day.toInt(), newTag)
+                birthdayData += newBirthday
+                val newJson = Json.encodeToString(birthdayData)
+                jsonFile.writeText(newJson)
+                editWindow.isVisible = false
+                calender.isVisible = true
+                val birthdayButtonName = dayInfo[day.toInt() - 1]
+                birthdayButtonName.text = "${windowName.text}\n${newName} - ${newTag}"
+            }
+        }
+        windowDeleteButton.setOnClickListener {
+            val deleteName = windowNewName.text.toString()
+            if (deleteName != "")
+            {
+                val dayNumber = windowMonth.text.indexOf("月")
+                var nowDay = windowMonth.text.substring(dayNumber + 1)
+                nowDay = nowDay.replace("日", "")
+                editWindow.isVisible = false
+                calender.isVisible = true
+                birthdayData = birthdayData.filterNot {
+                    it.month == nowMonth && it.day == nowDay.toInt() && it.name == deleteName
+                }
+                val newJson = Json.encodeToString(birthdayData)
+                jsonFile.writeText(newJson)
+                daySetting(nowMonth)
+                birthdaySetting()
+            }
         }
 
     }
@@ -132,8 +158,13 @@ class MainActivity : ComponentActivity() {
             try {
                 birthdayData = Json.decodeFromString<List<Birthday>>(jsonFile.readText())
                 var names = ""
+                var day = 0
                 for(birthday in birthdayData){
                     if(nowMonth == birthday.month){
+                        if(day != birthday.day){
+                            names = ""
+                            day = birthday.day
+                        }
                         val birthdayButtonName = dayInfo[birthday.day-1]
                         names += "${birthday.name} - ${birthday.tag}\n"
                         birthdayButtonName.text = names
@@ -147,7 +178,7 @@ class MainActivity : ComponentActivity() {
 
     fun daySetting(month: Int){
         for(i in 1..31){
-            dayButtons[i-1].text = "${i}"
+            dayInfo[i-1].text = ""
         }
         for (i in 29..31){
             if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
