@@ -6,5 +6,6 @@ data class Birthday(
     val name: String,
     val month: Int,
     val day: Int,
-    val tag: String
+    val tag: String,
+    val id: Int
 )

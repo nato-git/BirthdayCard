@@ -1,5 +1,12 @@
 package com.example.birthdaycard
 
+import android.Manifest
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.Button
@@ -10,6 +17,9 @@ import androidx.activity.ComponentActivity
 import androidx.compose.runtime.Composable
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.widget.FrameLayout
+import androidx.core.app.ActivityCompat
+import androidx.core.app.AlarmManagerCompat.canScheduleExactAlarms
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import kotlinx.serialization.json.Json
 import java.io.File
@@ -39,6 +49,8 @@ class MainActivity : ComponentActivity() {
         val windowback = findViewById<Button>(R.id.back_button)
         editWindow.isVisible = false
 
+        requestNotificationPermission()
+
         for (i in 1..31) {
             val resId = resources.getIdentifier("day$i", "id", packageName)
             dayButtons.add(findViewById<Button>(resId))
@@ -63,6 +75,7 @@ class MainActivity : ComponentActivity() {
                         names += "${birthday.name} - ${birthday.tag}\n"
                         birthdayButtonName.text = names
                     }
+                    setBirthdayReminder(birthday.month, birthday.day, birthday.id)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -91,6 +104,9 @@ class MainActivity : ComponentActivity() {
                             calender.isVisible = true
                             birthdayData = birthdayData.filterNot {
                                 it.month == nowMonth && it.day == i && it.name == "${birthday.name}"
+                            }
+                            if(!birthdayData.isEmpty()) {
+                                birthdayData = birthdayData.sortedBy { it.day }
                             }
                             val newJson = Json.encodeToString(birthdayData)
                             jsonFile.writeText(newJson)
@@ -124,56 +140,59 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
-
-            windowButton.setOnClickListener {
-                val newName = windowNewName.text.toString()
-                val newTag = windowNewTag.text.toString()
-                if (newName != "" && newTag != "") {
-                    val dayNumber = windowMonth.text.indexOf("月")
-                    var day = windowMonth.text.substring(dayNumber + 1)
-                    day = day.replace("日", "")
-                    val newBirthday = Birthday(newName, nowMonth, day.toInt(), newTag)
-                    birthdayData += newBirthday
-                    val newJson = Json.encodeToString(birthdayData)
-                    jsonFile.writeText(newJson)
-                    editWindow.isVisible = false
-                    calender.isVisible = true
-                    birthdaySetting()
-                }
-            }
-            windowback.setOnClickListener {
+        }
+        windowButton.setOnClickListener {
+            val newName = windowNewName.text.toString()
+            val newTag = windowNewTag.text.toString()
+            if (newName != "" && newTag != "") {
+                val dayNumber = windowMonth.text.indexOf("月")
+                var day = windowMonth.text.substring(dayNumber + 1)
+                day = day.replace("日", "")
+                val newId = (birthdayData.maxOfOrNull { it.id } ?: 0) + 1
+                val newBirthday = Birthday(newName, nowMonth, day.toInt(), newTag, newId)
+                birthdayData += newBirthday
+                birthdayData = birthdayData.sortedBy { it.day }
+                val newJson = Json.encodeToString(birthdayData)
+                jsonFile.writeText(newJson)
                 editWindow.isVisible = false
                 calender.isVisible = true
+                birthdaySetting()
             }
         }
+        windowback.setOnClickListener {
+            editWindow.isVisible = false
+            calender.isVisible = true
+        }
     }
-
         override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-            when (ev?.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    startX = ev.x
-                }
+            val calender = findViewById<LinearLayout>(R.id.calender)
+            if(calender.isVisible) {
+                when (ev?.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        startX = ev.x
+                    }
 
-                MotionEvent.ACTION_UP -> {
-                    val diffX = ev.x - startX
-                    if (diffX > 50f) {
-                        nowMonth--
-                        if (nowMonth < 1) {
-                            nowMonth = 12
+                    MotionEvent.ACTION_UP -> {
+                        val diffX = ev.x - startX
+                        if (diffX > 50f) {
+                            nowMonth--
+                            if (nowMonth < 1) {
+                                nowMonth = 12
+                            }
+                            val monthButton = findViewById<TextView>(R.id.month)
+                            monthButton.text = "${nowMonth}月"
+                            daySetting(nowMonth)
+                            birthdaySetting()
+                        } else if (diffX < -50f) {
+                            nowMonth++
+                            if (nowMonth > 12) {
+                                nowMonth = 1
+                            }
+                            val monthButton = findViewById<TextView>(R.id.month)
+                            monthButton.text = "${nowMonth}月"
+                            daySetting(nowMonth)
+                            birthdaySetting()
                         }
-                        val monthButton = findViewById<TextView>(R.id.month)
-                        monthButton.text = "${nowMonth}月"
-                        daySetting(nowMonth)
-                        birthdaySetting()
-                    } else if (diffX < -50f) {
-                        nowMonth++
-                        if (nowMonth > 12) {
-                            nowMonth = 1
-                        }
-                        val monthButton = findViewById<TextView>(R.id.month)
-                        monthButton.text = "${nowMonth}月"
-                        daySetting(nowMonth)
-                        birthdaySetting()
                     }
                 }
             }
@@ -198,6 +217,7 @@ class MainActivity : ComponentActivity() {
                             names += "${birthday.name} - ${birthday.tag}\n"
                             birthdayButtonName.text = names
                         }
+                        setBirthdayReminder(birthday.month, birthday.day, birthday.id)
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -218,9 +238,74 @@ class MainActivity : ComponentActivity() {
                     } else {
                         dayButtons[i - 1].isVisible = true
                     }
-                } else if (month == 2) {
-                    dayButtons[i - 1].isVisible = false
+                } else {
+                    if (i == 29) {
+                        dayButtons[i - 1].isVisible = true
+                    } else {
+                        dayButtons[i - 1].isVisible = false
+                    }
                 }
             }
         }
+    private fun setExactAlarm(triggerAtMillis: Long, birthdayNumber: Int) {
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlarmReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            birthdayNumber,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && alarmManager.canScheduleExactAlarms()) {
+            alarmManager.setExactAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP,
+                triggerAtMillis,
+                pendingIntent
+            )
+        }
+    }
+    private fun cancelExactAlarm(birthdayNumber: Int){
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlarmReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            birthdayNumber,
+            intent,
+            PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE
+        )
+        if (pendingIntent != null) {
+            alarmManager.cancel(pendingIntent)
+        }
+    }
+    fun setBirthdayReminder(birthMonth: Int, birthDay: Int, birthdayNumber: Int) {
+        val reminderCalendar = Calendar.getInstance().apply {
+            set(Calendar.MONTH, birthMonth - 1)
+            set(Calendar.DAY_OF_MONTH, birthDay)
+            set(Calendar.HOUR_OF_DAY, 6)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+            add(Calendar.DAY_OF_MONTH, -7)
+        }
+        if (reminderCalendar.before(Calendar.getInstance())) {
+            reminderCalendar.add(Calendar.YEAR, 1)
+        }
+        cancelExactAlarm(birthdayNumber)
+        setExactAlarm(reminderCalendar.timeInMillis,birthdayNumber)
+    }
+    private fun requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                    101
+                )
+            }
+        }
+    }
 }
