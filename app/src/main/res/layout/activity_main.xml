@@ -64,7 +64,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 2日 -->
@@ -95,7 +95,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 3日 -->
@@ -126,7 +126,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 4日 -->
@@ -157,7 +157,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 5日 -->
@@ -188,7 +188,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 6日 -->
@@ -219,7 +219,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 7日 -->
@@ -250,7 +250,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -289,7 +289,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 9日 -->
@@ -320,7 +320,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 10日 -->
@@ -351,7 +351,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 11日 -->
@@ -382,7 +382,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 12日 -->
@@ -413,7 +413,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 13日 -->
@@ -444,7 +444,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 14日 -->
@@ -475,7 +475,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -514,7 +514,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 16日 -->
@@ -545,7 +545,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 17日 -->
@@ -576,7 +576,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 18日 -->
@@ -607,7 +607,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 19日 -->
@@ -638,7 +638,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 20日 -->
@@ -669,7 +669,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 21日 -->
@@ -700,7 +700,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -739,7 +739,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp" />
+                    android:textSize="10sp" />
             </FrameLayout>
 
             <!-- 23日 -->
@@ -770,7 +770,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 24日 -->
@@ -801,7 +801,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 25日 -->
@@ -832,7 +832,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 26日 -->
@@ -863,7 +863,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 27日 -->
@@ -894,7 +894,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 28日 -->
@@ -925,7 +925,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
         </LinearLayout>
 
@@ -964,7 +964,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 30日 -->
@@ -995,7 +995,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <!-- 31日 -->
@@ -1026,7 +1026,7 @@
                     android:layout_marginRight="5dp"
                     android:elevation="10dp"
                     android:textColor="#000000"
-                    android:textSize="13sp"/>
+                    android:textSize="10sp"/>
             </FrameLayout>
 
             <Space

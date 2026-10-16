@@ -22,9 +22,9 @@ class AlarmReceiver : BroadcastReceiver() {
             notificationManager.createNotificationChannel(channel)
         }
         val notification = NotificationCompat.Builder(context, channelId)
-            .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
-            .setContentTitle("誕生日の通知です")
-            .setSettingsText("誰かの誕生日の一週間前になりました！\nお祝いをしましょう！")
+            .setSmallIcon(android.R.drawable.btn_star)
+            .setContentTitle("誕生日のお知らせです！")
+            .setContentText("明日誕生日の人がいます！\nお祝いの準備をしましょう！")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .build()

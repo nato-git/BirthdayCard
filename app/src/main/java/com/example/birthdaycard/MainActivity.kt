@@ -285,7 +285,7 @@ class MainActivity : ComponentActivity() {
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
             set(Calendar.MILLISECOND, 0)
-            add(Calendar.DAY_OF_MONTH, -7)
+            add(Calendar.DAY_OF_MONTH, -1)
         }
         if (reminderCalendar.before(Calendar.getInstance())) {
             reminderCalendar.add(Calendar.YEAR, 1)
